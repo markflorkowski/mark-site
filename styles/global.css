@@ -1,0 +1,42 @@
+html,
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  line-height: 1.6;
+  font-size: 18px;
+  background-color: #979ca0;
+  background-image: url("../public/images/linen-bg.png");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: #0070f3;
+  text-decoration: none;
+  display: inline-flex;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1 {
+  border-bottom: 1px solid #ccc;
+  float: left;
+  width: 100%;
+  padding-bottom: 3px;
+  margin: 0 0 1rem 0;
+}
