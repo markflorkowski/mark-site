@@ -21,7 +21,7 @@ const Home: React.FC<{ content: string }> = ({ content }) => {
   return (
     <Layout>
       <Head>
-        <title>{siteTitle}</title>
+        <title>{siteTitle + "test"}</title>
       </Head>
       <div
         className={utilStyles.paper}
