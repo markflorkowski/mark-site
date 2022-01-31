@@ -8,13 +8,19 @@ import parse from "remark-parse";
 
 const markdownUrl = `https://raw.githubusercontent.com/markflorkowski/markflorkowski/main/README.md`;
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetServerSideProps = async () => {
   const res = await fetch(markdownUrl);
   const data = await res.text();
   const content = await (
     await unified().use(parse).use(html).process(data)
   ).toString();
-  return { props: { content } };
+  return {
+    props: { content },
+    // Next.js will attempt to re-generate the page:
+    // - When a request comes in
+    // - At most once every 60 seconds
+    revalidate: 60,
+  };
 };
 
 const Home: React.FC<{ content: string }> = ({ content }) => {
